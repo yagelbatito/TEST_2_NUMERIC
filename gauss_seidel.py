@@ -40,8 +40,8 @@ def gauss_seidel(A, b, X0, TOL=1e-16, N=200):
 
 if __name__ == '__main__':
 
-    A = np.array([[3, 1, 1], [1, 1, 3], [1, 3, 1]])
-    b = np.array([7.0, 7.0, 11.0])
+    A = np.array([[2, 3, 4, 5, 6], [-5, 3, 4, -2, 3], [4, -5, -2, 2, 6 ], [4,5,-1,-2,-3], [5,5,3,-3,5]])
+    b = np.array([70, 20, 26, -12,37])
     X0 = np.zeros_like(b)
 
     solution =gauss_seidel(A, b, X0)

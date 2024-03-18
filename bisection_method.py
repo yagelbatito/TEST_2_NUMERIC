@@ -85,9 +85,9 @@ def bisection_method(f, a, b, tol=1e-6):
             raise Exception("The scalars a and b do not bound a root")
 
     #print the data
-    print("{:<10} {:<15} {:<15} {:<15} {:<15} {:<15} {:<15}".format("Iteration", "a", "b", "f(a)", "f(b)", "c", "f(c)"))
-    for i in range(k):
-        print("{:<10} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f}".format(K[i], A[i], B[i], F_a[i], F_b[i], C[i], F_c[i]))
+    # print("{:<10} {:<15} {:<15} {:<15} {:<15} {:<15} {:<15}".format("Iteration", "a", "b", "f(a)", "f(b)", "c", "f(c)"))
+    # for i in range(k):
+    #     print("{:<10} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f}".format(K[i], A[i], B[i], F_a[i], F_b[i], C[i], F_c[i]))
 
     return c  # return the current root
 
@@ -95,19 +95,19 @@ def bisection_method(f, a, b, tol=1e-6):
 
 if __name__ == '__main__':
     x = sp.symbols('x')
-    f = x**2 - 4
-    g = (x-2)**2
-    a = -2
-    b = 5
-    jump = (b-a)/10
+    f = ((6*(x**3) + (x**2)+ 2) / (2*x -6))
+    a = -3
+    b = 0
+    jump = (b-a)/100
     i=a+jump
     while i<=b:
         try:
             roots = bisection_method(f, a, i)
+            np.round(roots)
             print(bcolors.OKBLUE, f"\nThe equation f(x) has an approximate root at x = {roots}",bcolors.ENDC,)
             print()
         except Exception:
-            print(f"none roots between ({a})-({i})\n")
+            bla =1
         a = i
         i = i + jump
 

@@ -81,9 +81,8 @@ def make_diagonally_dominant(matrix, result_vector):
 
 
 if __name__ == "__main__":
-
-    A = np.array([[3, 1, 1], [1, 1, 3], [1, 3, 1]])
-    b = np.array([7, 7, 11])
+    A = np.array([[2, 3, 4, 5, 6], [-5, 3, 4, -2, 3], [4, -5, -2, 2, 6], [4, 5, -1, -2, -3], [5, 5, 3, -3, 5]])
+    b = np.array([70, 20, 26, -12, 37])
 
     x = np.zeros_like(b, dtype=np.double)
     solution = jacobi_iterative(A, b, x)
